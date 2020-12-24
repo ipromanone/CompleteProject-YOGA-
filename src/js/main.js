@@ -86,10 +86,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     setClock('timer', deadline);
 
-    // Modal
-
-    setClock('timer', deadline);
-
     // MODAL
 
     let more = document.querySelector('.more'),
@@ -228,7 +224,7 @@ pluseSlides(1);
             personsSum = +this.value;
             total =(daysSum + personsSum) * 4000;
 
-            if(restDays.value == '') {
+            if(restDays.value == '' || persons.value == '') {
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -239,7 +235,7 @@ pluseSlides(1);
             daysSum = +this.value;
             total =(daysSum + personsSum) * 4000;
 
-            if(persons.value == '') {
+            if(persons.value == '' || restDays.value == '') {
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -254,5 +250,4 @@ pluseSlides(1);
                 totalValue.innerHTML = a * this.options[this.selectedIndex].value;
             }
         });
-
 });
